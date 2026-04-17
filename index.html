@@ -1,1 +1,1327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 16: Roupas e Acessórios - Francês</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fontes Google (Playfair para títulos, Inter para leitura limpa) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --france-blue: #0055A4;
+            --france-red: #EF4135;
+            --france-white: #FFFFFF;
+            --text-dark: #1f2937;
+            --bg-color: #f3f4f6;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-dark); 
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .title-font { font-family: 'Playfair Display', serif; }
+        .fr-blue-text { color: var(--france-blue); }
+        .fr-red-text { color: var(--france-red); }
+
+        /* Container Principal com margens seguras para Mobile */
+        .page-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        /* Botão Menu (Topo e Rodapé) */
+        .menu-btn {
+            display: block;
+            background-color: var(--text-dark);
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: var(--card-shadow);
+        }
+        .menu-btn:hover {
+            background-color: var(--france-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Cabeçalho da Aula */
+        .lesson-header { 
+            padding: 2rem 1.5rem; 
+            background: linear-gradient(to bottom right, #f0f5ff, #e0ebff);
+            border-left: 8px solid var(--france-blue); 
+            text-align: center; 
+            border-radius: 12px; 
+            margin-bottom: 2.5rem;
+        }
+        .lesson-header h2 { font-size: 1.2rem; color: var(--france-red); font-weight: 700; text-transform: uppercase; letter-spacing: 1px;}
+        .lesson-header h1 { font-size: 2.4rem; color: var(--france-blue); margin: 0.5rem 0; line-height: 1.2; }
+        .lesson-header p { font-size: 1.05rem; color: #4b5563; margin-top: 1rem; }
+
+        /* Títulos de Seção */
+        .section-header { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 1.8rem; 
+            color: var(--france-blue); 
+            border-bottom: 3px solid var(--france-blue); 
+            padding-bottom: 0.5rem; 
+            margin-top: 2.5rem; 
+            margin-bottom: 1.5rem; 
+            display: flex; 
+            align-items: center; 
+        }
+        .section-header span { font-size: 2rem; margin-right: 0.8rem; }
+
+        /* Caixas de Texto (Gramática/Dicas) */
+        .grammar-box { 
+            background-color: #f9fafb; 
+            border: 1px solid #e5e7eb; 
+            border-radius: 12px; 
+            padding: 1.5rem; 
+            margin-bottom: 1.5rem; 
+        }
+        .grammar-box h4 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 1.4rem; 
+            color: var(--france-blue); 
+            margin-top: 0; 
+            margin-bottom: 1rem; 
+        }
+        
+        /* Dica de Pronúncia */
+        .pronunciation-tip { 
+            background-color: #fffbe6; 
+            border: 1px solid #fde68a; 
+            border-left: 5px solid #f59e0b; 
+            padding: 1.5rem; 
+            margin-top: 1.5rem; 
+            margin-bottom: 1.5rem;
+            border-radius: 12px; 
+        }
+        .pronunciation-tip h4 { color: #b45309; font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 0.8rem; margin-top: 0;}
+        .ipa-sound { font-weight: bold; color: #b45309; }
+
+        /* Tabelas Clássicas Otimizadas (Para Gramática) */
+        .table-wrapper { overflow-x: auto; margin-top: 1rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid #d1d5db; }
+        .grammar-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 400px; }
+        .grammar-table th, .grammar-table td { border: 1px solid #d1d5db; padding: 12px; text-align: left; vertical-align: middle; }
+        .grammar-table th { background-color: #dbeafe; color: #1e3a8a; font-weight: 600; }
+        .grammar-table tr:nth-child(even) { background-color: #f3f4f6; }
+
+        /* Botão de Áudio Inline (Para as Tabelas de Gramática) */
+        .inline-audio-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin-left: 6px;
+            color: var(--france-blue);
+            transition: transform 0.2s;
+            padding: 0;
+            vertical-align: middle;
+        }
+        .inline-audio-btn:hover {
+            transform: scale(1.2);
+        }
+
+        /* ========================================================
+           GRID RESPONSIVO DE CARDS (Para Frases e Vocabulário)
+           ======================================================== */
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* 1 coluna no mobile */
+            gap: 15px;
+            margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        @media (min-width: 600px) {
+            .vocab-grid { grid-template-columns: 1fr 1fr; } /* 2 colunas no desktop/tablet */
+        }
+
+        .vocab-item {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border-left: 4px solid var(--france-blue);
+        }
+
+        /* Topo do Card: Exemplo em Francês + Botão de Áudio */
+        .vocab-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .vocab-fr {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            padding-right: 10px;
+        }
+        .vocab-ipa-word {
+            display: block;
+            font-family: Consolas, monospace;
+            font-size: 0.9rem;
+            color: var(--france-red);
+            margin-top: 4px;
+        }
+        
+        /* Botão de Áudio */
+        .audio-btn {
+            background-color: #f0f5ff;
+            border: 1px solid #dbeafe;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            flex-shrink: 0;
+            color: var(--france-blue);
+        }
+        .audio-btn:hover, .audio-btn:active {
+            background-color: var(--france-blue);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Detalhes do Card */
+        .vocab-details {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .vocab-pt {
+            font-size: 0.95rem;
+            color: #374151;
+            font-weight: 600;
+        }
+        .vocab-tip {
+            font-size: 0.85rem;
+            color: #6b7280;
+            font-style: italic;
+            background: #f9fafb;
+            padding: 6px;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
+
+        /* Texto e Quiz */
+        .text-container { background-color: #fff; border: 1px solid #e5e7eb; padding: 1.5rem; border-radius: 12px; line-height: 1.6; margin-bottom: 1.5rem;}
+        .quiz-container { background-color: #f0f5ff; border: 1px solid #93c5fd; padding: 1.5rem; margin-top: 1.5rem; border-radius: 12px; }
+        .quiz-container ol { list-style-type: decimal; padding-left: 1.5rem; }
+        .quiz-container li { margin-bottom: 1rem; font-weight: 600;}
+        .quiz-container ul { list-style-type: upper-alpha; padding-left: 1.5rem; margin-top: 0.5rem; font-weight: 400;}
+        
+        /* Secção 6: Exercícios */
+        .exercises-container { background-color: #fafafa; border: 1px solid #e5e7eb; padding: 1.5rem; border-radius: 12px; }
+        .exercises-container ol { list-style-type: decimal; padding-left: 1.5rem; }
+        .exercises-container li { margin-bottom: 0.8rem; }
+        .fill-in-blank { display: inline-block; width: 100px; border-bottom: 1px solid #999; margin: 0 5px; text-align: center; }
+
+        /* Acordeão (Gabarito) */
+        details { cursor: pointer; margin-top: 1.5rem; background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px; }
+        summary { font-weight: 600; color: var(--france-blue); padding-left: 5px; outline: none; }
+        .answer { background-color: #e0f2fe; padding: 1rem; border-radius: 5px; margin-top: 1rem; font-size: 0.95rem; color: #1e3a8a;}
+
+        /* Rodapé */
+        .page-footer { margin-top: 3rem; padding-top: 1rem; text-align: center; }
+        .footer-line { display: flex; height: 4px; width: 100%; margin-top: 1rem; }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+        
+        <!-- Botão Voltar ao Menu (TOPO) -->
+        <a href="https://espaco-liberdade.github.io/FRA/" class="menu-btn">
+            ⬅ VOLTAR AO MENU PRINCIPAL
+        </a>
+
+        <!-- Secção 1: Apresentação da Aula -->
+        <header class="lesson-header">
+            <h2>Aula 16</h2>
+            <h1 class="title-font">Roupas e Acessórios</h1>
+            <p><strong>Tema Central:</strong> Descrever o vestuário, cores e materiais. <br>
+            <strong>Foco Gramatical:</strong> O <code>Passé Composé</code> com <code>avoir</code> (introdução).</p>
+        </header>
+
+        <!-- Secção 2: Aula Gramatical -->
+        <section>
+            <h3 class="section-header"><span>📖</span>Aula Gramatical</h3>
+            
+            <div class="grammar-box">
+                <h4>Subtópico 1: O Passé Composé com o Auxiliar "avoir"</h4>
+                <p>O <code>Passé Composé</code> é o principal tempo verbal para falar de ações concluídas no passado. A maioria dos verbos forma o <code>passé composé</code> com o auxiliar <strong>avoir</strong> no presente, seguido do <strong>particípio passado</strong> do verbo principal.</p>
+                <p class="mt-2 font-bold text-blue-700">A estrutura é: Sujeito + <code>avoir</code> (presente) + Particípio Passado</p>
+                
+                <h5 class="mt-4 font-bold text-gray-800">Formação do Particípio Passado (regular):</h5>
+                <div class="table-wrapper">
+                    <table class="grammar-table">
+                        <thead>
+                            <tr>
+                                <th>Terminação do Verbo</th>
+                                <th>Como Formar</th>
+                                <th>Exemplo (Infinitivo -> Particípio)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>-ER</strong></td>
+                                <td>Troca-se -er por <strong>-é</strong></td>
+                                <td>parler → <strong>parlé</strong> <button class="inline-audio-btn text-sm" onclick="playAudio(`parlé`)">🔊</button> / acheter → <strong>acheté</strong> <button class="inline-audio-btn text-sm" onclick="playAudio(`acheté`)">🔊</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>-IR</strong></td>
+                                <td>Troca-se -ir por <strong>-i</strong></td>
+                                <td>finir → <strong>fini</strong> <button class="inline-audio-btn text-sm" onclick="playAudio(`fini`)">🔊</button> / choisir → <strong>choisi</strong> <button class="inline-audio-btn text-sm" onclick="playAudio(`choisi`)">🔊</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>-RE</strong></td>
+                                <td>Troca-se -re por <strong>-u</strong></td>
+                                <td>vendre → <strong>vendu</strong> <button class="inline-audio-btn text-sm" onclick="playAudio(`vendu`)">🔊</button> / attendre → <strong>attendu</strong> <button class="inline-audio-btn text-sm" onclick="playAudio(`attendu`)">🔊</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h5 class="mt-4 font-bold text-gray-800">Exemplo de Conjugação (verbo <code>acheter</code> - comprar):</h5>
+                <div class="bg-gray-50 p-4 rounded border border-gray-200 text-gray-800 space-y-2 mt-2">
+                    <p><strong>J'ai acheté</strong> une chemise. <button class="inline-audio-btn text-sm" onclick="playAudio(`J'ai acheté une chemise.`)">🔊</button> <span class="text-gray-500 text-sm">(Eu comprei uma camisa.)</span></p>
+                    <p><strong>Tu as acheté</strong> un pantalon. <button class="inline-audio-btn text-sm" onclick="playAudio(`Tu as acheté un pantalon.`)">🔊</button></p>
+                    <p><strong>Il/Elle/On a acheté</strong> des chaussures. <button class="inline-audio-btn text-sm" onclick="playAudio(`Il a acheté des chaussures.`)">🔊</button></p>
+                    <p><strong>Nous avons acheté</strong> un manteau. <button class="inline-audio-btn text-sm" onclick="playAudio(`Nous avons acheté un manteau.`)">🔊</button></p>
+                    <p><strong>Vous avez acheté</strong> une jupe. <button class="inline-audio-btn text-sm" onclick="playAudio(`Vous avez acheté une jupe.`)">🔊</button></p>
+                    <p><strong>Ils/Elles ont acheté</strong> des chaussettes. <button class="inline-audio-btn text-sm" onclick="playAudio(`Ils ont acheté des chaussettes.`)">🔊</button></p>
+                </div>
+            </div>
+
+            <div class="grammar-box">
+                <h4>Subtópico 2: Adjetivos de Cor e Acordo</h4>
+                <p>Os adjetivos de cor concordam em género e número com o substantivo que descrevem. A regra geral é adicionar <strong>-e</strong> para o feminino e <strong>-s</strong> para o plural.</p>
+                
+                <div class="table-wrapper mt-4">
+                    <table class="grammar-table text-center">
+                        <thead>
+                            <tr>
+                                <th>Masculino Singular</th>
+                                <th>Feminino Singular</th>
+                                <th>Masculino Plural</th>
+                                <th>Feminino Plural</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>un pantalon <strong>bleu</strong> <button class="inline-audio-btn text-xs" onclick="playAudio(`un pantalon bleu`)">🔊</button></td>
+                                <td>une robe <strong>bleue</strong> <button class="inline-audio-btn text-xs" onclick="playAudio(`une robe bleue`)">🔊</button></td>
+                                <td>des pantalons <strong>bleus</strong> <button class="inline-audio-btn text-xs" onclick="playAudio(`des pantalons bleus`)">🔊</button></td>
+                                <td>des robes <strong>bleues</strong> <button class="inline-audio-btn text-xs" onclick="playAudio(`des robes bleues`)">🔊</button></td>
+                            </tr>
+                            <tr>
+                                <td>un pull <strong>vert</strong> <button class="inline-audio-btn text-xs" onclick="playAudio(`un pull vert`)">🔊</button></td>
+                                <td>une chemise <strong>verte</strong> <button class="inline-audio-btn text-xs" onclick="playAudio(`une chemise verte`)">🔊</button></td>
+                                <td>des pulls <strong>verts</strong> <button class="inline-audio-btn text-xs" onclick="playAudio(`des pulls verts`)">🔊</button></td>
+                                <td>des chemises <strong>vertes</strong> <button class="inline-audio-btn text-xs" onclick="playAudio(`des chemises vertes`)">🔊</button></td>
+                            </tr>
+                            <tr>
+                                <td>un chapeau <strong>noir</strong> <button class="inline-audio-btn text-xs" onclick="playAudio(`un chapeau noir`)">🔊</button></td>
+                                <td>une jupe <strong>noire</strong> <button class="inline-audio-btn text-xs" onclick="playAudio(`une jupe noire`)">🔊</button></td>
+                                <td>des chapeaux <strong>noirs</strong> <button class="inline-audio-btn text-xs" onclick="playAudio(`des chapeaux noirs`)">🔊</button></td>
+                                <td>des jupes <strong>noires</strong> <button class="inline-audio-btn text-xs" onclick="playAudio(`des jupes noires`)">🔊</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h5 class="mt-4 font-bold text-gray-800">Exceções Importantes:</h5>
+                <ul class="list-disc pl-5 mt-2 space-y-2 text-gray-700">
+                    <li>Cores que terminam em <strong>-e</strong> no masculino não mudam no feminino (ex: rouge <button class="inline-audio-btn text-sm" onclick="playAudio(`rouge`)">🔊</button>, jaune <button class="inline-audio-btn text-sm" onclick="playAudio(`jaune`)">🔊</button>).</li>
+                    <li><strong>Blanc</strong> <button class="inline-audio-btn text-sm" onclick="playAudio(`blanc`)">🔊</button> → <strong>blanche</strong> <button class="inline-audio-btn text-sm" onclick="playAudio(`blanche`)">🔊</button> (feminino).</li>
+                    <li>Cores que são também nomes de objetos (frutos, flores) são <strong>invariáveis</strong> (ex: orange <button class="inline-audio-btn text-sm" onclick="playAudio(`orange`)">🔊</button>, marron <button class="inline-audio-btn text-sm" onclick="playAudio(`marron`)">🔊</button>). Ex: des chaussures <strong>orange</strong>, des jupes <strong>marron</strong>.</li>
+                </ul>
+            </div>
+
+            <div class="pronunciation-tip">
+                <h4>💡 Dica de Pronúncia: O Som Nasal /ɑ̃/ em "blanc"</h4>
+                <p>A combinação "an" (como em <code>pantalon</code>) e "en" (como em <code>vent</code>) geralmente produz o som nasal <span class="ipa-sound">/ɑ̃/</span>. Para fazê-lo, abra bem a boca como para um "a" e deixe o ar passar pelo nariz.</p>
+                <p class="mt-2">A cor <code>blanc</code> <span class="ipa-sound">/blɑ̃/</span> <button class="inline-audio-btn text-sm" onclick="playAudio(`blanc`)">🔊</button> termina neste som. No entanto, na sua forma feminina, <code>blanche</code> <span class="ipa-sound">/blɑ̃ʃ/</span> <button class="inline-audio-btn text-sm" onclick="playAudio(`blanche`)">🔊</button>, o som nasal é seguido por um som "che", o que o torna menos evidente. Pratique a diferença entre <code>un pull blanc</code> e <code>une chemise blanche</code>.</p>
+            </div>
+        </section>
+
+        <!-- Secção 3: Frases do Tema (Convertidas em Mobile Cards) -->
+        <section>
+            <h3 class="section-header"><span>🗣️</span>Frases do Tema</h3>
+            <p class="mb-4 text-gray-600">Ouça atentamente a pronúncia de cada frase e tente repetir em voz alta. Clique no botão de áudio 🔊 para escutar a voz nativa.</p>
+
+            <!-- Grupo 1: Roupas e Ações no Passado -->
+            <h4 class="title-font text-2xl text-center fr-blue-text mt-8 mb-4">Roupas e Ações no Passado</h4>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Hier, j'ai acheté un pantalon bleu. <span class="vocab-ipa-word">/jɛʁ ʒe a.ʃə.te ɛ̃ pɑ̃.ta.lɔ̃ blø/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Hier, j'ai acheté un pantalon bleu.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Ontem, comprei umas calças azuis.</div>
+                        <div class="vocab-tip">Pronúncia: i-ér, jê ax-tê an pan-ta-lon blé</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Tu as choisi une belle robe rouge. <span class="vocab-ipa-word">/ty a ʃwa.zi yn bɛl ʁɔb ʁuʒ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Tu as choisi une belle robe rouge.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Tu escolheste um belo vestido vermelho.</div>
+                        <div class="vocab-tip">Pronúncia: tu á xuá-zí un béle róbe Rúje</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Elle a porté une jupe noire hier soir. <span class="vocab-ipa-word">/ɛl a pɔʁ.te yn ʒyp nwaʁ jɛʁ swaʁ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Elle a porté une jupe noire hier soir.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Ela usou uma saia preta ontem à noite.</div>
+                        <div class="vocab-tip">Pronúncia: éla por-tê un júpe nuár i-ér suár</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Nous avons vendu nos vieilles chaussures. <span class="vocab-ipa-word">/nu.z‿ a.vɔ̃ vɑ̃.dy no vjɛj ʃo.syʁ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Nous avons vendu nos vieilles chaussures.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Nós vendemos os nossos sapatos velhos.</div>
+                        <div class="vocab-tip">Pronúncia: nu-za-von van-du nô vi-éie xô-súr</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Qu'est-ce que vous avez mis pour la fête ? <span class="vocab-ipa-word">/kɛs kə vu.z‿ a.ve mi puʁ la fɛt/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Qu'est-ce que vous avez mis pour la fête ?`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">O que é que vestiram para a festa?</div>
+                        <div class="vocab-tip">Pronúncia: quésse que vu-za-vê mí pur la féte</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Ils ont trouvé un chapeau vert. <span class="vocab-ipa-word">/il.z‿ ɔ̃ tʁu.ve ɛ̃ ʃa.po vɛʁ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Ils ont trouvé un chapeau vert.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Eles encontraram um chapéu verde.</div>
+                        <div class="vocab-tip">Pronúncia: il-zon tru-vê an xa-pô vér</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">J'ai fini de ranger mes vêtements. <span class="vocab-ipa-word">/ʒe fi.ni də ʁɑ̃.ʒe mɛ vɛt.mɑ̃/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`J'ai fini de ranger mes vêtements.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Acabei de arrumar as minhas roupas.</div>
+                        <div class="vocab-tip">Pronúncia: jê fi-ní de Ran-jê mé véte-man</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">J'ai lavé tous mes vêtements. <span class="vocab-ipa-word">/ʒe la.ve tu mɛ vɛt.mɑ̃/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`J'ai lavé tous mes vêtements.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Lavei todas as minhas roupas.</div>
+                        <div class="vocab-tip">Pronúncia: jê la-vê tu mé véte-man</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Elles ont regardé les vitrines. <span class="vocab-ipa-word">/ɛl.z‿ ɔ̃ ʁə.ɡaʁ.de le vi.tʁin/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Elles ont regardé les vitrines.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Elas olharam para as montras.</div>
+                        <div class="vocab-tip">Pronúncia: el-zon Re-gar-dê lê vi-tríne</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Tu as attendu longtemps ? <span class="vocab-ipa-word">/ty a a.tɑ̃.dy lɔ̃.tɑ̃/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Tu as attendu longtemps ?`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Esperaste muito tempo?</div>
+                        <div class="vocab-tip">Pronúncia: tu á a-tan-du lon-tan</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Il a enlevé sa casquette. <span class="vocab-ipa-word">/il a ɑ̃l.ve sa kas.kɛt/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Il a enlevé sa casquette.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Ele tirou o seu boné.</div>
+                        <div class="vocab-tip">Pronúncia: ila an-le-vê sa cas-quéte</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Elle a emprunté mon parapluie violet. <span class="vocab-ipa-word">/ɛl a ɑ̃.pʁœ̃.te mɔ̃ pa.ʁa.plɥi vjɔ.lɛ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Elle a emprunté mon parapluie violet.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Ela pediu emprestado o meu guarda-chuva roxo.</div>
+                        <div class="vocab-tip">Pronúncia: éla an-pran-tê mon pa-Ra-pluí vi-o-lé</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">J'ai commandé des bottes en ligne. <span class="vocab-ipa-word">/ʒe kɔ.mɑ̃.de de bɔt ɑ̃ liɲ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`J'ai commandé des bottes en ligne.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Encomendei umas botas online.</div>
+                        <div class="vocab-tip">Pronúncia: jê co-man-dê dê bóte an lí-nhe</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">As-tu repassé ta chemise ? <span class="vocab-ipa-word">/a ty ʁə.pɑ.se ta ʃə.miz/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`As-tu repassé ta chemise ?`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Passaste a tua camisa a ferro?</div>
+                        <div class="vocab-tip">Pronúncia: á tu Re-pa-sê ta xe-míze</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grupo 2: Cores, Materiais e Descrições -->
+            <h4 class="title-font text-2xl text-center fr-blue-text mt-8 mb-4">Cores, Materiais e Descrições</h4>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Tu portes une chemise blanche. <span class="vocab-ipa-word">/ty pɔʁt yn ʃə.miz blɑ̃ʃ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Tu portes une chemise blanche.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Tu estás a usar uma camisa branca.</div>
+                        <div class="vocab-tip">Pronúncia: tu pórte un xe-míze blânxe</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Il aime son nouveau pull gris. <span class="vocab-ipa-word">/il ɛm sɔ̃ nu.vo pyl ɡʁi/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Il aime son nouveau pull gris.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Ele gosta da sua camisola cinzenta nova.</div>
+                        <div class="vocab-tip">Pronúncia: il éme son nu-vô pul grí</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Elle a des chaussettes jaunes. <span class="vocab-ipa-word">/ɛl a de ʃo.sɛt ʒon/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Elle a des chaussettes jaunes.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Ela tem meias amarelas.</div>
+                        <div class="vocab-tip">Pronúncia: éla dê xô-séte jône</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">J'ai cherché mon écharpe partout. <span class="vocab-ipa-word">/ʒe ʃɛʁ.ʃe mɔ̃.n‿ e.ʃaʁp paʁ.tu/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`J'ai cherché mon écharpe partout.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Procurei o meu cachecol por todo o lado.</div>
+                        <div class="vocab-tip">Pronúncia: jê xer-xê mon-ê-xarpe par-tú</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Nous avons acheté des gants en cuir. <span class="vocab-ipa-word">/nu.z‿ a.vɔ̃.z‿ a.ʃə.te de ɡɑ̃.z‿ ɑ̃ kɥiʁ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Nous avons acheté des gants en cuir.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Comprámos umas luvas de cabedal.</div>
+                        <div class="vocab-tip">Pronúncia: nu-za-von-zax-tê dê gan-zan cuír</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Ce manteau est en laine. <span class="vocab-ipa-word">/sə mɑ̃.to ɛ.t‿ ɑ̃ lɛn/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Ce manteau est en laine.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Este casaco é de lã.</div>
+                        <div class="vocab-tip">Pronúncia: se man-tô é-tan léne</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Cette ceinture est trop grande. <span class="vocab-ipa-word">/sɛt sɛ̃.tyʁ ɛ tʁo ɡʁɑ̃d/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Cette ceinture est trop grande.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Este cinto é demasiado grande.</div>
+                        <div class="vocab-tip">Pronúncia: séte san-túr é trô grânde</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">J'ai oublié mes lunettes de soleil. <span class="vocab-ipa-word">/ʒe u.bli.je mɛ ly.nɛt də sɔ.lɛj/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`J'ai oublié mes lunettes de soleil.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Esqueci-me dos meus óculos de sol.</div>
+                        <div class="vocab-tip">Pronúncia: jê u-bli-ê mé lu-néte de so-léie</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Elle a mis un t-shirt en coton. <span class="vocab-ipa-word">/ɛl a mi ɛ̃ ti.ʃœʁt ɑ̃ kɔ.tɔ̃/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Elle a mis un t-shirt en coton.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Ela vestiu uma t-shirt de algodão.</div>
+                        <div class="vocab-tip">Pronúncia: éla mí an ti-xérte an co-ton</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Avez-vous essayé ce jean ? <span class="vocab-ipa-word">/a.ve vu.z‿ ɛ.se.je sə dʒin/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Avez-vous essayé ce jean ?`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Já experimentou estas calças de ganga?</div>
+                        <div class="vocab-tip">Pronúncia: a-vê vu-zé-sei-ê se djíne</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Elle a perdu son sac marron. <span class="vocab-ipa-word">/ɛl a pɛʁ.dy sɔ̃ sak ma.ʁɔ̃/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Elle a perdu son sac marron.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Ela perdeu a sua mala castanha.</div>
+                        <div class="vocab-tip">Pronúncia: éla pér-du son sác ma-Ron</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Tes nouvelles baskets sont super ! <span class="vocab-ipa-word">/tɛ nu.vɛl bas.kɛt sɔ̃ sy.pɛʁ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Tes nouvelles baskets sont super !`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">As tuas sapatilhas novas são ótimas!</div>
+                        <div class="vocab-tip">Pronúncia: tê nu-véle bas-quéte son su-pér</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Le costume bleu foncé te va bien. <span class="vocab-ipa-word">/lə kɔs.tym blø fɔ̃.se tə va bjɛ̃/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Le costume bleu foncé te va bien.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">O fato azul-escuro fica-te bem.</div>
+                        <div class="vocab-tip">Pronúncia: le cos-túme blé fon-sê te vá bi-an</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">J'ai besoin d'une cravate rose. <span class="vocab-ipa-word">/ʒe bə.zwɛ̃ dyn kʁa.vat ʁoz/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`J'ai besoin d'une cravate rose.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Preciso de uma gravata cor-de-rosa.</div>
+                        <div class="vocab-tip">Pronúncia: jê be-zuan dun cra-váte Rôze</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">As-tu vu mes sandales ? <span class="vocab-ipa-word">/a ty vy mɛ sɑ̃.dal/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`As-tu vu mes sandales ?`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Viste as minhas sandálias?</div>
+                        <div class="vocab-tip">Pronúncia: á tu vu mé san-dále</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">J'ai porté un short tout l'été. <span class="vocab-ipa-word">/ʒe pɔʁ.te ɛ̃ ʃɔʁt tu le.te/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`J'ai porté un short tout l'été.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Usei calções o Verão todo.</div>
+                        <div class="vocab-tip">Pronúncia: jê por-tê an xórte tu lê-tê</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Le sac à main est en soie. <span class="vocab-ipa-word">/lə sak a mɛ̃ ɛ.t‿ ɑ̃ swa/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Le sac à main est en soie.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">A mala de mão é de seda.</div>
+                        <div class="vocab-tip">Pronúncia: le sác á man é-tan suá</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grupo 3: Frases Diversas -->
+            <h4 class="title-font text-2xl text-center fr-blue-text mt-8 mb-4">Frases Diversas</h4>
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Il a changé de chemise. <span class="vocab-ipa-word">/il a ʃɑ̃.ʒe də ʃə.miz/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Il a changé de chemise.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Ele trocou de camisa.</div>
+                        <div class="vocab-tip">Pronúncia: ila xan-jê de xe-míze</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Nous avons parlé de mode. <span class="vocab-ipa-word">/nu.z‿ a.vɔ̃ paʁ.le də mɔd/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Nous avons parlé de mode.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Nós falámos de moda.</div>
+                        <div class="vocab-tip">Pronúncia: nu-za-von par-lê de mode</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Nous avons adoré le défilé de mode. <span class="vocab-ipa-word">/nu.z‿ a.vɔ̃.z‿ a.dɔ.ʁe lə de.fi.le də mɔd/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Nous avons adoré le défilé de mode.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Nós adorámos o desfile de moda.</div>
+                        <div class="vocab-tip">Pronúncia: nu-za-von-za-do-Rê le dê-fi-lê de móde</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Il n'a pas aimé mon cadeau. <span class="vocab-ipa-word">/il na pa.z‿ ɛ.me mɔ̃ ka.do/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Il n'a pas aimé mon cadeau.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Ele não gostou do meu presente.</div>
+                        <div class="vocab-tip">Pronúncia: il na pá-zê-mê mon ca-dô</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">On a dansé toute la nuit. <span class="vocab-ipa-word">/ɔ̃.n‿ a dɑ̃.se tut la nɥi/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`On a dansé toute la nuit.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Nós dançámos a noite toda.</div>
+                        <div class="vocab-tip">Pronúncia: on-á dan-sê túte la nuí</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Pourquoi tu as mis ce vieux pull ? <span class="vocab-ipa-word">/puʁ.kwa ty a mi sə vjø pyl/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Pourquoi tu as mis ce vieux pull ?`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Porque é que vestiste essa camisola velha?</div>
+                        <div class="vocab-tip">Pronúncia: pur-cuá tu á mí se vi-é pul</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">J'ai reçu une montre comme cadeau. <span class="vocab-ipa-word">/ʒe ʁə.sy yn mɔ̃tʁ kɔm ka.do/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`J'ai reçu une montre comme cadeau.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Recebi um relógio como presente.</div>
+                        <div class="vocab-tip">Pronúncia: jê Re-su un môntre cóme ca-dô</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Elle a trouvé des boucles d'oreilles en or. <span class="vocab-ipa-word">/ɛl a tʁu.ve de bu.klə dɔ.ʁɛj ɑ̃.n‿ ɔʁ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Elle a trouvé des boucles d'oreilles en or.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Ela encontrou uns brincos de ouro.</div>
+                        <div class="vocab-tip">Pronúncia: éla tru-vê dê bú-cle dô-Ré-ie an-ór</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">J'ai enfilé mes pantoufles. <span class="vocab-ipa-word">/ʒe ɑ̃.fi.le mɛ pɑ̃.tufl/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`J'ai enfilé mes pantoufles.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Calcei os meus chinelos de quarto.</div>
+                        <div class="vocab-tip">Pronúncia: jê an-fi-lê mé pan-tú-fle</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Il a noué sa cravate. <span class="vocab-ipa-word">/il a nwe sa kʁa.vat/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Il a noué sa cravate.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Ele deu um nó na sua gravata.</div>
+                        <div class="vocab-tip">Pronúncia: ila nu-ê sa cra-váte</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">J'ai payé avec ma carte. <span class="vocab-ipa-word">/ʒe pɛ.je a.vɛk ma kaʁt/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`J'ai payé avec ma carte.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Paguei com o meu cartão.</div>
+                        <div class="vocab-tip">Pronúncia: jê pê-iê a-véc ma cárte</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Nous avons mangé au restaurant. <span class="vocab-ipa-word">/nu.z‿ a.vɔ̃ mɑ̃.ʒe o ʁɛs.tɔ.ʁɑ̃/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Nous avons mangé au restaurant.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Nós comemos no restaurante.</div>
+                        <div class="vocab-tip">Pronúncia: nu-za-von man-jê ô Rés-to-Ran</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Tu as déjà vu ce film ? <span class="vocab-ipa-word">/ty a de.ʒa vy sə film/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Tu as déjà vu ce film ?`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Já viste este filme?</div>
+                        <div class="vocab-tip">Pronúncia: tu á dê-já vu se filme</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Elle a téléphoné à sa mère. <span class="vocab-ipa-word">/ɛl a te.le.fɔ.ne a sa mɛʁ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Elle a téléphoné à sa mère.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Ela telefonou à sua mãe.</div>
+                        <div class="vocab-tip">Pronúncia: éla tê-lê-fo-nê á sa mér</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">J'ai travaillé toute la journée. <span class="vocab-ipa-word">/ʒe tʁa.va.je tut la ʒuʁ.ne/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`J'ai travaillé toute la journée.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Trabalhei o dia todo.</div>
+                        <div class="vocab-tip">Pronúncia: jê tra-va-iê túte la jur-nê</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Vous avez gagné le match. <span class="vocab-ipa-word">/vu.z‿ a.ve ɡa.ɲe lə matʃ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Vous avez gagné le match.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Vocês ganharam o jogo.</div>
+                        <div class="vocab-tip">Pronúncia: vu-za-vê ga-nhê le mátche</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">On a bien rigolé. <span class="vocab-ipa-word">/ɔ̃.n‿ a bjɛ̃ ʁi.ɡɔ.le/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`On a bien rigolé.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Nós rimo-nos muito.</div>
+                        <div class="vocab-tip">Pronúncia: on-á bi-an Ri-go-lê</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Elles n'ont pas fini leurs devoirs. <span class="vocab-ipa-word">/ɛl nɔ̃ pa fi.ni lœʁ də.vwaʁ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Elles n'ont pas fini leurs devoirs.`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Elas não acabaram os seus trabalhos de casa.</div>
+                        <div class="vocab-tip">Pronúncia: él non pá fi-ní lér de-vuár</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção 4: Texto e Quiz -->
+        <section>
+            <h3 class="section-header"><span>✍️</span>Texto e Quiz</h3>
+            <div class="text-container">
+                <h4 class="title-font text-xl text-blue-800 mb-4 border-b border-gray-200 pb-2">Une Journée de Shopping</h4>
+                <p class="text-gray-700">
+                    Samedi dernier, j'ai décidé de faire les magasins parce que j'avais besoin de nouveaux vêtements pour l'automne. D'abord, j'ai cherché un manteau chaud. Dans la première boutique, j'ai trouvé un beau manteau en laine, de couleur grise. J'ai essayé la taille M et c'était parfait. Ensuite, j'ai continué mes achats. J'ai acheté une écharpe bleue et des gants noirs pour aller avec mon nouveau manteau. J'ai aussi regardé les chaussures et j'ai craqué pour une paire de bottes en cuir marron. Elles étaient un peu chères, mais j'ai profité des soldes.
+                </p>
+                <p class="text-gray-700 mt-4">
+                    Après, j'ai eu faim. J'ai mangé une crêpe au chocolat dans un petit café. En fin de journée, j'étais fatiguée mais très contente. J'ai téléphoné à mon amie Sophie pour lui raconter ma journée. J'ai tout rangé dans mon armoire. J'ai porté mes nouvelles bottes dimanche et tout le monde a adoré ! J'ai passé un excellent week-end.
+                </p>
+            </div>
+            
+            <div class="quiz-container">
+                <h4 class="title-font text-xl text-blue-800 mb-4 border-b border-blue-200 pb-2">Quiz de Compreensão</h4>
+                <ol>
+                    <li>Quelle couleur est le manteau que la personne a acheté ?
+                        <ul><li>A) Noir.</li><li>B) Bleu.</li><li>C) Gris.</li></ul>
+                    </li>
+                    <li class="mt-4">Qu'est-ce que la personne a mangé après ses achats ?
+                        <ul><li>A) Un sandwich.</li><li>B) Une crêpe au chocolat.</li><li>C) Une salade.</li></ul>
+                    </li>
+                    <li class="mt-4">Quand est-ce que la personne a porté ses nouvelles bottes ?
+                        <ul><li>A) Samedi soir.</li><li>B) Dimanche.</li><li>C) Lundi matin.</li></ul>
+                    </li>
+                </ol>
+                <details>
+                    <summary>Ver Gabarito do Quiz</summary>
+                    <div class="answer">1-C, 2-B, 3-B</div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Secção 5: Vocabulário da Aula (Convertido para Cards Mobile) -->
+        <section>
+            <h3 class="section-header"><span>📚</span>Vocabulário da Aula</h3>
+            
+            <div class="vocab-grid">
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Les vêtements <span class="vocab-ipa-word">/le vɛt.mɑ̃/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Les vêtements`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">As roupas</div>
+                        <div class="vocab-tip">Pronúncia: lê véte-man</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Un pantalon <span class="vocab-ipa-word">/ɛ̃ pɑ̃.ta.lɔ̃/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Un pantalon`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Umas calças</div>
+                        <div class="vocab-tip">Pronúncia: an pan-ta-lon</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Une chemise <span class="vocab-ipa-word">/yn ʃə.miz/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Une chemise`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Uma camisa</div>
+                        <div class="vocab-tip">Pronúncia: un xe-míze</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Une robe <span class="vocab-ipa-word">/yn ʁɔb/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Une robe`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Um vestido</div>
+                        <div class="vocab-tip">Pronúncia: un Róbe</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Une jupe <span class="vocab-ipa-word">/yn ʒyp/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Une jupe`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Uma saia</div>
+                        <div class="vocab-tip">Pronúncia: un júpe</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Un pull <span class="vocab-ipa-word">/ɛ̃ pyl/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Un pull`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Uma camisola</div>
+                        <div class="vocab-tip">Pronúncia: an pul</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Un manteau <span class="vocab-ipa-word">/ɛ̃ mɑ̃.to/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Un manteau`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Um casaco</div>
+                        <div class="vocab-tip">Pronúncia: an man-tô</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Des chaussures <span class="vocab-ipa-word">/de ʃo.syʁ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Des chaussures`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Sapatos</div>
+                        <div class="vocab-tip">Pronúncia: dê xô-súr</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Des chaussettes <span class="vocab-ipa-word">/de ʃo.sɛt/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Des chaussettes`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Meias</div>
+                        <div class="vocab-tip">Pronúncia: dê xô-séte</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Un chapeau <span class="vocab-ipa-word">/ɛ̃ ʃa.po/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Un chapeau`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Um chapéu</div>
+                        <div class="vocab-tip">Pronúncia: an xa-pô</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Une écharpe <span class="vocab-ipa-word">/yn e.ʃaʁp/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Une écharpe`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Um cachecol</div>
+                        <div class="vocab-tip">Pronúncia: un ê-xarpe</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Des gants <span class="vocab-ipa-word">/de ɡɑ̃/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Des gants`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Luvas</div>
+                        <div class="vocab-tip">Pronúncia: dê gan</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Une ceinture <span class="vocab-ipa-word">/yn sɛ̃.tyʁ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Une ceinture`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Um cinto</div>
+                        <div class="vocab-tip">Pronúncia: un san-túr</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Un sac <span class="vocab-ipa-word">/ɛ̃ sak/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Un sac`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Uma mala / saco</div>
+                        <div class="vocab-tip">Pronúncia: an sác</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">La couleur <span class="vocab-ipa-word">/la ku.lœʁ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`La couleur`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">A cor</div>
+                        <div class="vocab-tip">Pronúncia: la cu-lér</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">La taille <span class="vocab-ipa-word">/la taj/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`La taille`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">O tamanho</div>
+                        <div class="vocab-tip">Pronúncia: la tái-e</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Le coton <span class="vocab-ipa-word">/lə kɔ.tɔ̃/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Le coton`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">O algodão</div>
+                        <div class="vocab-tip">Pronúncia: le co-ton</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">La laine <span class="vocab-ipa-word">/la lɛn/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`La laine`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">A lã</div>
+                        <div class="vocab-tip">Pronúncia: la léne</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Le cuir <span class="vocab-ipa-word">/lə kɥiʁ/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Le cuir`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">O cabedal / couro</div>
+                        <div class="vocab-tip">Pronúncia: le cuír</div>
+                    </div>
+                </div>
+
+                <div class="vocab-item">
+                    <div class="vocab-top">
+                        <div class="vocab-fr">Porter <span class="vocab-ipa-word">/pɔʁ.te/</span></div>
+                        <button class="audio-btn" onclick="playAudio(`Porter`)">🔊</button>
+                    </div>
+                    <div class="vocab-details">
+                        <div class="vocab-pt">Usar / Vestir</div>
+                        <div class="vocab-tip">Pronúncia: por-tê</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção 6: Exercícios Práticos -->
+        <section>
+            <h3 class="section-header"><span>✏️</span>Exercícios Práticos</h3>
+            <div class="exercises-container">
+                <ol>
+                    <li>Passe para o passé composé: "Je mange une pomme." -> "J'<span class="fill-in-blank"></span> une pomme."</li>
+                    <li>Faça o acordo da cor: "J'ai une voiture (bleu) <span class="fill-in-blank"></span>."</li>
+                    <li>Passe para o passé composé: "Nous finissons le travail." -> "Nous <span class="fill-in-blank"></span> le travail."</li>
+                    <li>Faça o acordo da cor: "Il a des chaussures (noir) <span class="fill-in-blank"></span>."</li>
+                    <li>Passe para o passé composé: "Tu attends le bus." -> "Tu <span class="fill-in-blank"></span> le bus."</li>
+                    <li>Traduza para francês: "Ela comprou um vestido verde."</li>
+                    <li>Passe para o passé composé: "Ils regardent un film." -> "Ils <span class="fill-in-blank"></span> un film."</li>
+                    <li>Faça o acordo da cor: "J'ai acheté une chemise (blanc) <span class="fill-in-blank"></span>."</li>
+                    <li>Traduza para francês: "Nós falámos com o professor."</li>
+                    <li>Passe para o passé composé: "Vous choisissez un livre." -> "Vous <span class="fill-in-blank"></span> un livre."</li>
+                    <li>Faça o acordo da cor (atenção!): "Elle porte des gants (marron) <span class="fill-in-blank"></span>."</li>
+                    <li>Traduza para francês: "Eu vendi o meu casaco."</li>
+                    <li>Passe para o passé composé (negativa): "Je ne parle pas." -> "Je n'<span class="fill-in-blank"></span> pas parlé."</li>
+                    <li>Traduza para francês: "Eles ouviram a música."</li>
+                    <li>Faça o acordo da cor (atenção!): "Nous avons des t-shirts (orange) <span class="fill-in-blank"></span>."</li>
+                </ol>
+                <details>
+                    <summary>Ver Gabarito dos Exercícios</summary>
+                    <div class="answer">
+                        1. ai mangé | 2. bleue | 3. avons fini | 4. noires | 5. as attendu | 6. Elle a acheté une robe verte. | 7. ont regardé | 8. blanche | 9. Nous avons parlé avec le professeur. | 10. avez choisi | 11. marron (invariável) | 12. J'ai vendu mon manteau. | 13. ai | 14. Ils ont écouté la musique. | 15. orange (invariável)
+                    </div>
+                </details>
+            </div>
+        </section>
+        
+        <!-- Secção 7: Conclusão -->
+        <section>
+            <h3 class="section-header"><span>🏁</span>Conclusão e Como Continuar a Aprender</h3>
+            <div class="grammar-box">
+                <p><strong>Félicitations !</strong> Chegou ao fim da Aula 16. A introdução ao <code>passé composé</code> é um passo gigante na sua aprendizagem. Agora consegue não só descrever o que as pessoas vestem no presente, mas também contar o que comprou, o que usou ou o que viu no passado. Esta é uma ferramenta poderosa para contar histórias e partilhar experiências.</p>
+                
+                <h4 class="mt-4 mb-2 text-xl font-bold">Dicas para praticar:</h4>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li><strong>Descreva o seu "Look" Passado:</strong> Pense no que vestiu ontem e descreva em francês. "Hier, j'ai porté un jean bleu et un t-shirt blanc."</li>
+                    <li><strong>Comentador de Moda:</strong> Veja fotos de pessoas em revistas ou na internet e descreva o que elas vestem, prestando atenção ao acordo das cores.</li>
+                    <li><strong>Crie Listas de Compras:</strong> Imagine que vai fazer compras. Crie uma lista em francês e depois imagine que já comprou os itens. "J'ai acheté une nouvelle écharpe."</li>
+                </ul>
+                <p class="mt-4 text-center">Na próxima aula, vamos continuar a praticar o <code>passé composé</code> enquanto exploramos as lojas. Aprenderá a interagir com os vendedores, a pedir para <strong>experimentar roupa</strong> e a falar de tamanhos e preços. <strong class="fr-blue-text">À bientôt !</strong></p>
+            </div>
+        </section>
+
+        <!-- Botão Voltar ao Menu (RODAPÉ) -->
+        <a href="https://espaco-liberdade.github.io/FRA/" class="menu-btn mt-8">
+            ⬅ VOLTAR AO MENU PRINCIPAL
+        </a>
+
+        <!-- Rodapé Visual -->
+        <footer class="page-footer">
+            <p class="text-xs text-gray-500">Apostila de Francês Completa - Aula 16</p>
+            <div class="footer-line">
+                <div class="w-1/3 fr-blue-bg"></div>
+                <div class="w-1/3 bg-white"></div>
+                <div class="w-1/3 fr-red-bg"></div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- SCRIPT DE ÁUDIO (Web Speech API Otimizada) -->
+    <script>
+        let voices = [];
+        
+        // Função para carregar as vozes do sistema
+        function loadVoices() { 
+            voices = window.speechSynthesis.getVoices(); 
+        }
+        
+        // Gatilho essencial para carregamento assíncrono no Mobile/Android
+        if (window.speechSynthesis.onvoiceschanged !== undefined) {
+            window.speechSynthesis.onvoiceschanged = loadVoices;
+        }
+        
+        // Tentativa de carregamento imediato
+        loadVoices();
+
+        // Função de disparo do Áudio Nativo
+        function playAudio(text) {
+            if ('speechSynthesis' in window) {
+                // Cancela o áudio atual caso o aluno clique rapidamente em outro
+                window.speechSynthesis.cancel();
+
+                // Converte para minúsculas para otimizar leitura silábica/fonética
+                const textToRead = text.toLowerCase();
+                const utterance = new SpeechSynthesisUtterance(textToRead);
+                
+                // Força o idioma para FRANCÊS
+                utterance.lang = 'fr-FR'; 
+                utterance.rate = 0.85; // Velocidade ideal para aprendizagem
+
+                // Recarrega vozes se a array estiver vazia (bug comum no Android)
+                if (voices.length === 0) {
+                    voices = window.speechSynthesis.getVoices();
+                }
+                
+                // LÓGICA DE SELEÇÃO INTELIGENTE DE VOZ (Anti-sotaque Português)
+                let targetVoice = voices.find(voice => 
+                    voice.lang === 'fr-FR' && (voice.name.includes('Premium') || voice.name.includes('Google') || voice.name.includes('Enhanced') || voice.name.includes('Thomas') || voice.name.includes('Marie'))
+                );
+
+                if (!targetVoice) {
+                    targetVoice = voices.find(voice => voice.lang === 'fr-FR' && !voice.localService);
+                }
+
+                if (!targetVoice) {
+                    targetVoice = voices.find(voice => voice.lang === 'fr-FR');
+                }
+
+                if (!targetVoice) {
+                    targetVoice = voices.find(voice => voice.lang.startsWith('fr'));
+                }
+
+                if (targetVoice) {
+                    utterance.voice = targetVoice;
+                }
+
+                // Toca o áudio
+                window.speechSynthesis.speak(utterance);
+            } else {
+                alert("Desculpe, a tecnologia de áudio não é suportada no seu navegador. Tente utilizar o Google Chrome ou Safari.");
+            }
+        }
+    </script>
+</body>
+</html>
